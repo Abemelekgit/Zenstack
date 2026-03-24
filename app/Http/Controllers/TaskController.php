@@ -29,7 +29,7 @@ class TaskController extends Controller
             'title' => $validated['title'],
         ]);
 
-        return back()->with('success', 'Task added.');
+        return back()->with('success', 'Task created.');
     }
 
     public function update(Request $request, Task $task): RedirectResponse
@@ -40,7 +40,7 @@ class TaskController extends Controller
             'is_completed' => ! $task->is_completed,
         ]);
 
-        return back()->with('success', 'Task updated.');
+        return back()->with('success', $task->is_completed ? 'Task completed.' : 'Task reopened.');
     }
 
     public function destroy(Request $request, Task $task): RedirectResponse
@@ -49,6 +49,6 @@ class TaskController extends Controller
 
         $task->delete();
 
-        return back()->with('success', 'Task deleted.');
+        return back()->with('success', 'Task removed.');
     }
 }
