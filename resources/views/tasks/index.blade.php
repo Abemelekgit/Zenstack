@@ -24,7 +24,7 @@
                             name="title"
                             type="text"
                             value="{{ old('title') }}"
-                            placeholder="Write one focused next step"
+                            placeholder="Write one focused next action"
                             class="w-full rounded-2xl border-stone-200 text-stone-800 shadow-sm focus:border-emerald-400 focus:ring-emerald-400"
                             maxlength="255"
                             required
